@@ -1,0 +1,46 @@
+[% WRAPPER 'include/layout.tt' %]
+
+<h1 style="padding: 70px; text-align: center; font-size: 30px; line-height: 1; letter-spacing: -2px;">Signup</h1>
+
+<hr />
+
+<div>
+    <div class="row-fluid">
+        <div class="span6">
+            <div class="area">
+                <form method="post" action="signup" accept-charset="UTF-8" class="form-horizontal">
+                    <input type="hidden" name="submit" value="submit">
+                    <div class="control-group">
+                        <label class="control-label" for="username">Username</label>
+                        <div class="controls">
+                            <input type="text" id="username" name="username" placeholder="4-12 characters" value="[% username %]">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="password">Password</label>
+                        <div class="controls">
+                            <input type="password" id="password" name="password" placeholder="8-32 characters" value="[% password %]">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="controls">
+                            <!--
+                            <label class="checkbox">
+                                <input type="checkbox"> I agree all your <a href="#">Terms of Services</a>
+                            </label>
+                            -->
+                            <button type="submit" class="btn btn-success">Sign Up</button>
+                            <button type="button" class="btn">Help</button>
+                        </div>
+                    </div>
+                    [% IF error %]
+                    <div class="alert alert-error">
+                        [% FOR error IN errors %]
+                            <strong>[% error %]</strong><br />
+                        [% END %]
+                    </div>
+                    [% END %]
+                    </form>
+            </div>
+
+[% END %]
