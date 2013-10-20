@@ -25,7 +25,6 @@ sub setup_schema {
     }
 }
 
-use Data::Dumper;
 sub _dbh {
     my $db_config = shift;
     DBI->connect($db_config->{dsn}, $db_config->{user}, $db_config->{pass},
@@ -34,11 +33,11 @@ sub _dbh {
 }
 
 sub teng {
-    my $self = shift;
+    my ($self, $handler) = @_;
     
-    my $config = App->config->{DBH};
-    my $dbh = _dbh($config);
-    my $db   = App::DB->new(
+    my $config = App->config->{db}->{$handler};
+    my $dbh    = _dbh($config);
+    my $db = App::DB->new(
         dbh    => $dbh,
         schema => App::DB::Schema->instance()
     );

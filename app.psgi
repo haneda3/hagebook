@@ -17,7 +17,7 @@ use Data::Dumper;
     my $c = App->new();
 #    $c->setup_schema();
 }
-my $db_config = App->config->{DBH} || die "Missing configuration for DBI";
+my $db_config = App->config->{db} || die "Missing configuration for DBI";
 builder {
     enable 'Plack::Middleware::Static',
         path => qr{^(?:/static/)},
@@ -29,7 +29,8 @@ builder {
     enable 'Plack::Middleware::Session',
         store => Plack::Session::Store::DBI->new(
             get_dbh => sub {
-                DBI->connect($db_config->{dsn}, $db_config->{user}, $db_config->{pass} )
+                
+                DBI->connect($db_config->{session}->{dsn}, $db_config->{session}->{user}, $db_config->{session}->{pass} )
                     or die $DBI::errstr;
             }
         ),

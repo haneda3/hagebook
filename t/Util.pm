@@ -40,7 +40,7 @@ sub slurp {
 
 sub _dbh {
     my ($mysqld, $dbname) = @_;
-    DBI->connect( $mysqld->dsn( dbname => $dbname ),
+    DBI->connect( $mysqld->dsn(dbname => $dbname ),
         'root', '', +{ AutoCommit => 0, RaiseError => 1, } );
 }
 
@@ -48,34 +48,65 @@ sub _dbh {
 use App;
 use Test::Fixture::DBI;
 use Data::Dumper;
-{
-    my $mysqld = Test::mysqld->new(
-        my_cnf => { 'skip-networking' => '' }, # TCP接続を使わない
-    )  or plan skip_all => $Test::mysqld::errstr;
 
-    my $db_name = 'test';
-    my $dbh = _dbh($mysqld, $db_name);
-
-    $dbh->do("CREATE DATABASE IF NOT EXISTS $db_name");
-    $dbh->do("USE $db_name");
+sub _create_db {
+    my ($dbh, $dbname) = @_;
+    
+    $dbh->do("CREATE DATABASE IF NOT EXISTS test");
+    $dbh->do("USE test");
 
     # create table
     construct_database(
         dbh      => $dbh,
-        database => 't/lib/schema.yaml',
+        database => "t/fixture/$dbname/schema.yaml",
     );
 
     # insert data
     construct_fixture(
         dbh     => $dbh,
-        fixture => 't/lib/fixture.yaml',
+        fixture => "t/fixture/$dbname/fixture.yaml",
     );
+}
 
-    # keep mysqld
+{
+    my $mysqld = Test::mysqld->new(
+        my_cnf => { 'skip-networking' => '' }, # TCP接続を使わない
+    )  or plan skip_all => $Test::mysqld::errstr;
+
+    my $dbh = _dbh($mysqld, 'test');
+    
+    my $dbs = App->config->{db};
+    foreach my $name (keys %$dbs){
+        _create_db($dbh, $name);
+        my $config = App->config->{db}->{$name};
+        $config->{dsn} = $mysqld->dsn;
+     }
+    $ENV{DBH} = $dbh;
     $ENV{MYSQLD} = $mysqld;
 
-    my $config = App->config->{DBH};
-    $config->{dsn} = $mysqld->dsn;
+    #my $db_name = 'test';
+    #my $dbh = _dbh($mysqld, $db_name);
+
+    #$dbh->do("CREATE DATABASE IF NOT EXISTS $db_name");
+    #$dbh->do("USE $db_name");
+
+    # create table
+    #construct_database(
+    #    dbh      => $dbh,
+    #    database => 't/lib/schema.yaml',
+    #);
+
+    # insert data
+    #construct_fixture(
+    #    dbh     => $dbh,
+    #    fixture => 't/lib/fixture.yaml',
+    #);
+
+    # keep mysqld
+    #$ENV{MYSQLD} = $mysqld;
+
+    #my $config = App->config->{DBH}->{user};
+    #$config->{dsn} = $mysqld->dsn;
 }
 
 1;

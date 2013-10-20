@@ -5,6 +5,3 @@
 - 
   data: "CREATE TABLE `sessions2` (\n  `id` char(72) NOT NULL,\n  `session_data` text,\n  PRIMARY KEY (`id`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8"
   schema: sessions2
-- 
-  data: "CREATE TABLE `user` (\n  `id` int(11) NOT NULL AUTO_INCREMENT,\n  `username` varchar(12) NOT NULL,\n  `password` varchar(256) NOT NULL,\n  PRIMARY KEY (`id`),\n  UNIQUE KEY `username_UNIQUE` (`username`)\n) ENGINE=InnoDB AUTO_INCREMENT=1040 DEFAULT CHARSET=utf8"
-  schema: user

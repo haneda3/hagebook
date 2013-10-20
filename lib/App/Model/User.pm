@@ -19,7 +19,7 @@ sub _create_password {
 sub insert {
     my ($self, $username, $password) = @_;
     my $userid = undef;
-    my $teng = $self->c->teng();
+    my $teng = $self->c->teng('user');
     my $txn = $teng->txn_scope();
     {
         my $row = $teng->insert('user',
@@ -49,7 +49,7 @@ sub insert {
 sub auth {
     my ($self, $username, $password) = @_;
 
-    my $teng = $self->c->teng();
+    my $teng = $self->c->teng('user');
     my $row = $teng->single('user',
         +{
             username => $username,
