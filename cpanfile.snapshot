@@ -1568,6 +1568,23 @@ DISTRIBUTIONS
       ExtUtils::CBuilder 0
       Module::Build 0.38
       perl 5.008005
+  Router-Simple-0.15
+    pathname: T/TO/TOKUHIROM/Router-Simple-0.15.tar.gz
+    provides:
+      Router::Simple 0.15
+      Router::Simple::Declare undef
+      Router::Simple::Route undef
+      Router::Simple::SubMapper undef
+    requirements:
+      CPAN::Meta 0
+      CPAN::Meta::Prereqs 0
+      Class::Accessor::Lite 0.05
+      ExtUtils::CBuilder 0
+      List::Util 0
+      Module::Build 0.38
+      Scalar::Util 0
+      parent 0
+      perl 5.008_001
   SQL-Abstract-1.74
     pathname: R/RI/RIBASUSHI/SQL-Abstract-1.74.tar.gz
     provides:

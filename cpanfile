@@ -15,6 +15,7 @@ requires 'DBD::mysql',                      '0';
 requires 'Teng',                            '0';
 requires 'Data::Validator',                 '0';
 requires 'FormValidator::Lite',             '0';
+requires 'Router::Simple',                  '0';
 
 on 'configure' => sub {
     requires 'Module::Build', '0.38';
