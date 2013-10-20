@@ -20,10 +20,3 @@
     username: aaaaaa
   name: 5
   schema: user
-- 
-  data: 
-    id: 1023
-    password: a0b9ce19fde7771209caa5e99b68bdb515f9056f3a747ef04b3659765418b7f9
-    username: testuser
-  name: 1023
-  schema: user

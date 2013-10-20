@@ -1,0 +1,3 @@
+#!/bin/sh
+carton exec make_database_yaml.pl -d "dbi:mysql:dbname=test;host=localhost" -o t/lib/schema.yaml
+carton exec make_fixture_yaml.pl -d "dbi:mysql:dbname=test;host=localhost" -t user -e "SELECT * FROM user" -o t/lib/fixture.yaml
