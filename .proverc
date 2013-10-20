@@ -1,0 +1,9 @@
+--lib
+--trap
+--timer
+--verbose
+--color
+--recurse
+-w
+-It/lib
+

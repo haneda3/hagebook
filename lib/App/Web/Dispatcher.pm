@@ -13,7 +13,7 @@ any '/' => sub {
     my $model = $c->model('User');
     #$model->insert('test', 'test');
 
-    print Dumper $model->auth('test', 'test');
+    my $auth = $model->auth('test', 'test');
 
 
     return $c->render('index.tt');

@@ -13,6 +13,7 @@ use lib File::Spec->rel2abs(File::Spec->catdir(dirname(__FILE__), '..', 'extlib'
 use lib File::Spec->rel2abs(File::Spec->catdir(dirname(__FILE__), '..', 'lib'));
 use parent qw/Exporter/;
 use Test::More 0.98;
+use Test::mysqld;
 
 our @EXPORT = qw(slurp);
 
@@ -37,13 +38,44 @@ sub slurp {
     do { local $/; <$fh> };
 }
 
+sub _dbh {
+    my ($mysqld, $dbname) = @_;
+    DBI->connect( $mysqld->dsn( dbname => $dbname ),
+        'root', '', +{ AutoCommit => 0, RaiseError => 1, } );
+}
+
 # initialize database
 use App;
+use Test::Fixture::DBI;
+use Data::Dumper;
 {
-    unlink 'db/test.db' if -f 'db/test.db';
+    my $mysqld = Test::mysqld->new(
+        my_cnf => { 'skip-networking' => '' }, # TCP接続を使わない
+    )  or plan skip_all => $Test::mysqld::errstr;
 
-    my $c = App->new();
-    $c->setup_schema();
+    my $db_name = 'test';
+    my $dbh = _dbh($mysqld, $db_name);
+
+    $dbh->do("CREATE DATABASE IF NOT EXISTS $db_name");
+    $dbh->do("USE $db_name");
+
+    # create table
+    construct_database(
+        dbh      => $dbh,
+        database => 't/lib/schema.yaml',
+    );
+
+    # insert data
+    construct_fixture(
+        dbh     => $dbh,
+        fixture => 't/lib/fixture.yaml',
+    );
+
+    # keep mysqld
+    $ENV{MYSQLD} = $mysqld;
+
+    my $config = App->config->{DBH};
+    $config->{dsn} = $mysqld->dsn;
 }
 
 1;

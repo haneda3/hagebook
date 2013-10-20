@@ -1,0 +1,8 @@
+#!/bin/bash
+TARGET="$@"
+if [ $# -eq 0 ]; then
+    TARGET="t"
+fi
+exec 2>&1
+PLACK_ENV=test carton exec prove --lib -It/lib "$TARGET"
+

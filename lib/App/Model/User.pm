@@ -5,10 +5,11 @@ use utf8;
 use Digest::SHA;
 use parent qw/App::Model/;
 use App;
+use Data::Dumper;
 
 sub _create_password {
     my ($self, $userid, $password) = @_;
-    
+
     my $salt = App->config->{PASSWORD_HASH_SALT} . $userid . $userid;
     my $pw = Digest::SHA::sha256_hex($salt . $password);
 
@@ -17,7 +18,6 @@ sub _create_password {
 
 sub insert {
     my ($self, $username, $password) = @_;
-    
     my $userid = undef;
     my $teng = $self->c->teng();
     my $txn = $teng->txn_scope();
@@ -28,6 +28,12 @@ sub insert {
                 password => '',
             }
         );
+
+        unless ($row) {
+            $txn->rollback();
+            return;
+        }
+
         my $uid = $row->id;
         my $pw = $self->_create_password($uid, $password);
 

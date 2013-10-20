@@ -184,6 +184,21 @@ DISTRIBUTIONS
     requirements:
       Class::Accessor 0
       Test::More 0
+  Class-Accessor-Grouped-0.10010
+    pathname: R/RI/RIBASUSHI/Class-Accessor-Grouped-0.10010.tar.gz
+    provides:
+      Class::Accessor::Grouped 0.10010
+    requirements:
+      Carp 0
+      Class::XSAccessor 1.15
+      ExtUtils::CBuilder 0.27
+      ExtUtils::MakeMaker 6.59
+      Module::Runtime 0.012
+      Scalar::Util 0
+      Sub::Name 0.05
+      Test::Exception 0.31
+      Test::More 0.88
+      perl 5.006
   Class-Accessor-Lite-0.05
     pathname: K/KA/KAZUHO/Class-Accessor-Lite-0.05.tar.gz
     provides:
@@ -232,6 +247,23 @@ DISTRIBUTIONS
       strict 0
       version 0
       warnings 0
+  Class-XSAccessor-1.18
+    pathname: S/SM/SMUELLER/Class-XSAccessor-1.18.tar.gz
+    provides:
+      Class::XSAccessor 1.18
+      Class::XSAccessor::Array 1.18
+    requirements:
+      ExtUtils::MakeMaker 0
+      Test::More 0
+      XSLoader 0
+      perl 5.008
+  Clone-0.35
+    pathname: G/GA/GARU/Clone-0.35.tar.gz
+    provides:
+      Clone 0.35
+    requirements:
+      ExtUtils::MakeMaker 0
+      Test::More 0
   Cookie-Baker-0.01
     pathname: K/KA/KAZEBURO/Cookie-Baker-0.01.tar.gz
     provides:
@@ -658,6 +690,16 @@ DISTRIBUTIONS
       ExtUtils::MakeMaker 0
       HTTP::Date 6
       perl 5.006002
+  File-Remove-1.52
+    pathname: A/AD/ADAMK/File-Remove-1.52.tar.gz
+    provides:
+      File::Remove 1.52
+    requirements:
+      Cwd 3.29
+      ExtUtils::MakeMaker 6.36
+      File::Spec 3.29
+      Test::More 0.42
+      perl 5.00503
   File-ShareDir-1.03
     pathname: A/AD/ADAMK/File-ShareDir-1.03.tar.gz
     provides:
@@ -750,6 +792,25 @@ DISTRIBUTIONS
       Module::Build 0.38
       Scalar::Util 1.19
       perl 5.008001
+  Getopt-Long-Descriptive-0.096
+    pathname: R/RJ/RJBS/Getopt-Long-Descriptive-0.096.tar.gz
+    provides:
+      Getopt::Long::Descriptive 0.096
+      Getopt::Long::Descriptive::Opts 0.096
+      Getopt::Long::Descriptive::Usage 0.096
+    requirements:
+      Carp 0
+      ExtUtils::MakeMaker 6.30
+      File::Basename 0
+      Getopt::Long 2.33
+      List::Util 0
+      Params::Validate 0.97
+      Scalar::Util 0
+      Sub::Exporter 0.972
+      Sub::Exporter::Util 0
+      overload 0
+      strict 0
+      warnings 0
   HTML-FillInForm-Lite-1.13
     pathname: G/GF/GFUJI/HTML-FillInForm-Lite-1.13.tar.gz
     provides:
@@ -945,6 +1006,14 @@ DISTRIBUTIONS
       bytes 0
       strict 0
       warnings 0
+  Hash-Merge-0.12
+    pathname: D/DM/DMUEY/Hash-Merge-0.12.tar.gz
+    provides:
+      Hash::Merge 0.12
+    requirements:
+      Clone 0
+      ExtUtils::MakeMaker 0
+      Test::More 0.33
   Hash-MultiValue-0.15
     pathname: M/MI/MIYAGAWA/Hash-MultiValue-0.15.tar.gz
     provides:
@@ -1092,6 +1161,71 @@ DISTRIBUTIONS
       Try::Tiny 0
       strict 0
       warnings 0
+  Module-Install-1.06
+    pathname: A/AD/ADAMK/Module-Install-1.06.tar.gz
+    provides:
+      Module::AutoInstall 1.06
+      Module::Install 1.06
+      Module::Install::Admin 1.06
+      Module::Install::Admin::Bundle 1.06
+      Module::Install::Admin::Compiler 1.06
+      Module::Install::Admin::Find 1.06
+      Module::Install::Admin::Include 1.06
+      Module::Install::Admin::Makefile 1.06
+      Module::Install::Admin::Manifest 1.06
+      Module::Install::Admin::Metadata 1.06
+      Module::Install::Admin::ScanDeps 1.06
+      Module::Install::Admin::WriteAll 1.06
+      Module::Install::AutoInstall 1.06
+      Module::Install::Base 1.06
+      Module::Install::Base::FakeAdmin 1.06
+      Module::Install::Bundle 1.06
+      Module::Install::Can 1.06
+      Module::Install::Compiler 1.06
+      Module::Install::DSL 1.06
+      Module::Install::Deprecated 1.06
+      Module::Install::External 1.06
+      Module::Install::Fetch 1.06
+      Module::Install::Include 1.06
+      Module::Install::Inline 1.06
+      Module::Install::MakeMaker 1.06
+      Module::Install::Makefile 1.06
+      Module::Install::Metadata 1.06
+      Module::Install::PAR 1.06
+      Module::Install::Run 1.06
+      Module::Install::Scripts 1.06
+      Module::Install::Share 1.06
+      Module::Install::Win32 1.06
+      Module::Install::With 1.06
+      Module::Install::WriteAll 1.06
+      inc::Module::Install 1.06
+      inc::Module::Install::DSL 1.06
+    requirements:
+      Archive::Tar 1.44
+      Devel::PPPort 3.16
+      ExtUtils::Install 1.52
+      ExtUtils::MakeMaker 6.59
+      ExtUtils::ParseXS 2.19
+      File::Remove 1.42
+      File::Spec 3.28
+      JSON 2.14
+      LWP::UserAgent 5.812
+      Module::Build 0.29
+      Module::CoreList 2.17
+      Module::ScanDeps 0.89
+      PAR::Dist 0.29
+      Parse::CPAN::Meta 1.39
+      Test::Harness 3.13
+      Test::More 0.86
+      YAML::Tiny 1.38
+      perl 5.005
+  Module-Install-AuthorTests-0.002
+    pathname: R/RJ/RJBS/Module-Install-AuthorTests-0.002.tar.gz
+    provides:
+      Module::Install::AuthorTests 0.002
+    requirements:
+      ExtUtils::MakeMaker 0
+      Module::Install 0
   Module-Runtime-0.013
     pathname: Z/ZE/ZEFRAM/Module-Runtime-0.013.tar.gz
     provides:
@@ -1102,6 +1236,20 @@ DISTRIBUTIONS
       perl 5.006
       strict 0
       warnings 0
+  Module-ScanDeps-1.11
+    pathname: R/RS/RSCHUPP/Module-ScanDeps-1.11.tar.gz
+    provides:
+      Module::ScanDeps 1.11
+      Module::ScanDeps::Cache undef
+      Module::ScanDeps::DataFeed undef
+    requirements:
+      ExtUtils::MakeMaker 6.59
+      File::Spec 0
+      File::Temp 0
+      Module::Build::ModuleInfo 0
+      Test::More 0
+      perl 5.008001
+      version 0
   Mouse-1.13
     pathname: G/GF/GFUJI/Mouse-1.13.tar.gz
     provides:
@@ -1156,6 +1304,16 @@ DISTRIBUTIONS
       IO::Select 0
       IO::Socket::INET 0
       perl 5.006002
+  PAR-Dist-0.49
+    pathname: R/RS/RSCHUPP/PAR-Dist-0.49.tar.gz
+    provides:
+      PAR::Dist 0.49
+    requirements:
+      ExtUtils::MakeMaker 0
+      File::Find 0
+      File::Path 0
+      File::Spec 0
+      File::Temp 0
   Package-Stash-0.36
     pathname: D/DO/DOY/Package-Stash-0.36.tar.gz
     provides:
@@ -1205,6 +1363,41 @@ DISTRIBUTIONS
       Scalar::Util 1.18
       Test::More 0.42
       perl 5.00503
+  Params-Validate-1.08
+    pathname: D/DR/DROLSKY/Params-Validate-1.08.tar.gz
+    provides:
+      Attribute::Params::Validate 1.08
+      Bar undef
+      Baz undef
+      Foo undef
+      PVTests undef
+      PVTests::Callbacks undef
+      PVTests::Defaults undef
+      PVTests::Regex undef
+      PVTests::Standard undef
+      PVTests::With undef
+      Params::Validate 1.08
+      Params::Validate::Constants 1.08
+      Params::Validate::PP 1.08
+      Params::Validate::XS 1.08
+      Quux undef
+      Testing::X undef
+      Yadda undef
+      inc::MyModuleBuild undef
+    requirements:
+      Attribute::Handlers 0.79
+      Carp 0
+      Exporter 0
+      ExtUtils::CBuilder 0
+      Module::Build 0.3601
+      Module::Implementation 0
+      Scalar::Util 1.10
+      XSLoader 0
+      attributes 0
+      perl 5.008001
+      strict 0
+      vars 0
+      warnings 0
   Parse-CPAN-Meta-1.4409
     pathname: D/DA/DAGOLDEN/Parse-CPAN-Meta-1.4409.tar.gz
     provides:
@@ -1375,6 +1568,38 @@ DISTRIBUTIONS
       ExtUtils::CBuilder 0
       Module::Build 0.38
       perl 5.008005
+  SQL-Abstract-1.74
+    pathname: R/RI/RIBASUSHI/SQL-Abstract-1.74.tar.gz
+    provides:
+      DBIx::Class::Storage::Debug::PrettyPrint undef
+      SQL::Abstract 1.74
+      SQL::Abstract::Test undef
+      SQL::Abstract::Tree undef
+    requirements:
+      Class::Accessor::Grouped 0.10005
+      ExtUtils::MakeMaker 6.59
+      Getopt::Long::Descriptive 0.091
+      Hash::Merge 0.12
+      List::Util 0
+      Scalar::Util 0
+      Storable 0
+      Test::Deep 0.101
+      Test::Exception 0
+      Test::More 0.92
+      Test::Warn 0
+      perl 5.006002
+  SQL-Abstract-Plugin-InsertMulti-0.04
+    pathname: Z/ZI/ZIGOROU/SQL-Abstract-Plugin-InsertMulti-0.04.tar.gz
+    provides:
+      SQL::Abstract::Plugin::InsertMulti 0.04
+    requirements:
+      CPAN::Meta 0
+      CPAN::Meta::Prereqs 0
+      ExtUtils::CBuilder 0
+      Module::Build 0.38
+      SQL::Abstract 1.6
+      Sub::Exporter 0
+      perl 5.008001
   SQL-Interp-1.22
     pathname: M/MA/MARKSTOS/SQL-Interp-1.22.tar.gz
     provides:
@@ -1454,6 +1679,12 @@ DISTRIBUTIONS
       Scalar::Util 0
       strict 0
       warnings 0
+  Sub-Name-0.05
+    pathname: F/FL/FLORA/Sub-Name-0.05.tar.gz
+    provides:
+      Sub::Name 0.05
+    requirements:
+      ExtUtils::MakeMaker 0
   Sub-Uplevel-0.24
     pathname: D/DA/DAGOLDEN/Sub-Uplevel-0.24.tar.gz
     provides:
@@ -1590,6 +1821,31 @@ DISTRIBUTIONS
       Try::Tiny 0.07
       strict 0
       warnings 0
+  Test-Fixture-DBI-0.07
+    pathname: Z/ZI/ZIGOROU/Test-Fixture-DBI-0.07.tar.gz
+    provides:
+      Test::Fixture::DBI 0.07
+      Test::Fixture::DBI::Util 0.01
+      Test::Fixture::DBI::Util::SQLite 0.01
+      Test::Fixture::DBI::Util::mysql 0.02
+    requirements:
+      Carp 0
+      DBI 0
+      Exporter 0
+      ExtUtils::MakeMaker 6.42
+      File::Temp 0
+      Getopt::Long 0
+      Pod::Usage 0
+      SQL::Abstract 0
+      SQL::Abstract::Plugin::InsertMulti 0
+      Scalar::Util 0
+      Test::Exception 0
+      Test::LoadAllModules 0
+      Test::More 0
+      Test::Requires 0
+      UNIVERSAL::require 0
+      YAML::Syck 0
+      parent 0
   Test-Harness-3.29
     pathname: O/OV/OVID/Test-Harness-3.29.tar.gz
     provides:
@@ -1644,6 +1900,18 @@ DISTRIBUTIONS
     requirements:
       ExtUtils::MakeMaker 0
       parent 0
+  Test-LoadAllModules-0.022
+    pathname: K/KI/KITANO/Test-LoadAllModules-0.022.tar.gz
+    provides:
+      Test::LoadAllModules 0.022
+    requirements:
+      ExtUtils::MakeMaker 6.36
+      File::Spec 0
+      Filter::Util::Call 0
+      List::MoreUtils 0
+      Module::Install::AuthorTests 0
+      Module::Pluggable::Object 0
+      Test::More 0
   Test-LongString-0.15
     pathname: R/RG/RGARCIA/Test-LongString-0.15.tar.gz
     provides:
@@ -1767,6 +2035,18 @@ DISTRIBUTIONS
       Test::More 0
       Tree::DAG_Node 1.02
       perl 5.006
+  Test-mysqld-0.17
+    pathname: K/KA/KAZUHO/Test-mysqld-0.17.tar.gz
+    provides:
+      Test::mysqld 0.17
+    requirements:
+      Class::Accessor::Lite 0
+      DBD::mysql 0
+      DBI 0
+      ExtUtils::MakeMaker 6.42
+      File::Copy::Recursive 0
+      Test::SharedFork 0.06
+      perl 5.008
   Text-Xslate-3.0.0
     pathname: G/GF/GFUJI/Text-Xslate-3.0.0.tar.gz
     provides:
@@ -1873,6 +2153,14 @@ DISTRIBUTIONS
       constant 0
       strict 0
       warnings 0
+  UNIVERSAL-require-0.15
+    pathname: N/NE/NEILB/UNIVERSAL-require-0.15.tar.gz
+    provides:
+      UNIVERSAL 0.15
+      UNIVERSAL::require 0.15
+    requirements:
+      ExtUtils::MakeMaker 0
+      Test::More 0.47
   URI-1.60
     pathname: G/GA/GAAS/URI-1.60.tar.gz
     provides:
@@ -1977,6 +2265,29 @@ DISTRIBUTIONS
       Fcntl 0
       URI 1.10
       perl 5.008001
+  YAML-Syck-1.27
+    pathname: T/TO/TODDR/YAML-Syck-1.27.tar.gz
+    provides:
+      JSON::Syck 1.27
+      YAML::Dumper::Syck undef
+      YAML::Loader::Syck undef
+      YAML::Syck 1.27
+    requirements:
+      ExtUtils::MakeMaker 6.59
+      perl 5.006
+  YAML-Tiny-1.56
+    pathname: E/ET/ETHER/YAML-Tiny-1.56.tar.gz
+    provides:
+      YAML::Tiny 1.56
+    requirements:
+      Carp 0
+      Exporter 0
+      ExtUtils::MakeMaker 6.30
+      Module::Build::Tiny 0.027
+      Scalar::Util 0
+      perl 5.006
+      strict 0
+      warnings 0
   libwww-perl-6.05
     pathname: G/GA/GAAS/libwww-perl-6.05.tar.gz
     provides:
